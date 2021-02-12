@@ -1,0 +1,4 @@
+.snowpack
+dist
+node_modules
+src/_site
