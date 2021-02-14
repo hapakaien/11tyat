@@ -5,13 +5,15 @@ module.exports = function (config) {
   });
 
   // Copy files
-  config.addPassthroughCopy({ 'src/static': '' });
+  config.addPassthroughCopy({ 'static': '' });
 
   // Base config
   return {
     dir: {
-      input: 'src',
-      output: 'src/_site',
+      input: 'pages',
+      includes: '../includes',
+      data: '../data',
+      output: 'dist',
     },
     passthroughFileCopy: true,
     templateFormats: ['html', 'md', 'liquid'],

@@ -5,7 +5,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf src/_site",
+    "clean": "rimraf dist",
     "serve": "serve --no-clipboard --listen 8080 dist",
     "dev": "cross-env NODE_ENV=development run-s clean dev:*",
     "dev:snowpack": "snowpack dev",

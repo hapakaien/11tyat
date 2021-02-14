@@ -4,9 +4,8 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    'src/_site': { url: '/', static: true, resolve: false },
-    'src/assets/scripts': { url: '/scripts' },
-    'src/assets/styles': { url: '/styles' },
+    dist: { url: '/', static: true, resolve: false },
+    assets: { url: '/' },
   },
   plugins: [
     '@snowpack/plugin-postcss',
