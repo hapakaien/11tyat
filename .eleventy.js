@@ -12,7 +12,7 @@ module.exports = function (config) {
     dir: {
       input: 'pages',
       includes: '../includes',
-      data: '../data',
+      data: '../config',
       output: 'dist',
     },
     passthroughFileCopy: true,
