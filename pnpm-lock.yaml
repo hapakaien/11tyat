@@ -4,6 +4,7 @@ devDependencies:
   '@11ty/eleventy': 0.11.1
   '@snowpack/plugin-postcss': 1.1.0_postcss-cli@8.3.1+postcss@8.2.5
   '@snowpack/plugin-run-script': 2.3.0
+  '@tailwindcss/typography': 0.4.0_tailwindcss@2.0.3
   cross-env: 7.0.3
   cssnano: 4.1.10
   eslint: 7.19.0
@@ -156,6 +157,18 @@ packages:
     dev: true
     resolution:
       integrity: sha512-rIbD67uzTPkzemMFbw5seUm/hZFrToTSqN/SGGq5XaU45ftX2sCRzp0lqSH+lZYhC5QTSm5RxXW1HcuPOlbPXQ==
+  /@tailwindcss/typography/0.4.0_tailwindcss@2.0.3:
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      lodash.uniq: 4.5.0
+      tailwindcss: 2.0.3_postcss@8.2.5
+    dev: true
+    peerDependencies:
+      tailwindcss: 2.0.0-alpha.24 || ^2.0.0
+    resolution:
+      integrity: sha512-3BfOYT5MYNEq81Ism3L2qu/HRP2Q5vWqZtZRQqQrthHuaTK9qpuPfbMT5WATjAM5J1OePKBaI5pLoX4S1JGNMQ==
   /@types/babel-types/7.0.9:
     dev: true
     resolution:
@@ -2930,6 +2943,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
+  /lodash.castarray/4.4.0:
+    dev: true
+    resolution:
+      integrity: sha1-wCUTUV4wna3dTCTGDP3c9ZdtkRU=
   /lodash.difference/4.5.0:
     dev: true
     resolution:
@@ -2950,10 +2967,18 @@ packages:
     dev: true
     resolution:
       integrity: sha1-+4m2WpqAKBgz8LdHizpRBPiY67M=
+  /lodash.isplainobject/4.0.6:
+    dev: true
+    resolution:
+      integrity: sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
   /lodash.memoize/4.1.2:
     dev: true
     resolution:
       integrity: sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
+  /lodash.merge/4.6.2:
+    dev: true
+    resolution:
+      integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
   /lodash.sortby/4.7.0:
     dev: true
     resolution:
@@ -5838,6 +5863,7 @@ specifiers:
   '@11ty/eleventy': ^0.11.1
   '@snowpack/plugin-postcss': ^1.1.0
   '@snowpack/plugin-run-script': ^2.3.0
+  '@tailwindcss/typography': ^0.4.0
   alpinejs: ^2.8.0
   cross-env: ^7.0.3
   cssnano: ^4.1.10

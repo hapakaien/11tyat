@@ -1,10 +1,11 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const tailwindcssTypography = require('@tailwindcss/typography');
 
 module.exports = {
   purge: {
     mode: 'all',
     preserveHtmlElements: false,
-    content: ['./src/**/*.html', './src/**/*.md'],
+    content: ['./pages/**/*.html', './pages/**/*.md'],
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -19,5 +20,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [tailwindcssTypography],
 };
