@@ -5,7 +5,7 @@ module.exports = function (config) {
   });
 
   // Copy files
-  config.addPassthroughCopy({ 'static': '' });
+  config.addPassthroughCopy({ 'static': '/' });
 
   // Base config
   return {
