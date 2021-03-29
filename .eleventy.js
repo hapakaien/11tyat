@@ -1,25 +1,24 @@
-module.exports = function (eleventyConfig) {
-  eleventyConfig.setTemplateFormats([
-    // Templates:
-    'html',
-    'njk',
-    'md',
-    // Static Assets:
-    'css',
-    'jpeg',
-    'jpg',
-    'png',
-    'svg',
-    'woff',
-    'woff2',
-  ]);
-  eleventyConfig.addPassthroughCopy('static');
+module.exports = function (config) {
+  /// Set Liquid
+  config.setLiquidOptions({
+    dynamicPartials: true,
+  });
 
+  // Copy files
+  config.addPassthroughCopy({ 'static': '' });
+
+  // Base config
   return {
     dir: {
-      input: '_template',
-      includes: '../_includes',
-      output: '_output',
+      input: 'pages',
+      includes: '../includes',
+      data: '../config',
+      output: 'dist',
     },
+    passthroughFileCopy: true,
+    templateFormats: ['html', 'md', 'liquid', 'png', 'svg', 'txt'],
+    htmlTemplateEngine: 'liquid',
+    dataTemplateEngine: 'liquid',
+    markdownTemplateEngine: 'liquid',
   };
 };
