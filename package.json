@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "clean": "rimraf dist build",
+    "clean": "rimraf dist",
     "11ty": "eleventy",
     "serve": "serve --no-clipboard --listen 8080 build",
     "dev": "cross-env NODE_ENV=development run-s clean dev:*",
