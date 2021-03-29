@@ -1,36 +1,28 @@
-// Snowpack Configuration File
-// See all supported options: https://www.snowpack.dev/reference/configuration
-
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    dist: { url: '/', static: true, resolve: false },
-    assets: { url: '/' },
+    _output: { url: '/', static: true },
+    src: { url: '/dist' },
   },
   plugins: [
-    '@snowpack/plugin-postcss',
-    [
-      '@snowpack/plugin-run-script',
-      {
-        cmd: 'eleventy',
-        watch: '$1 --watch',
-      },
-    ],
+    ['@snowpack/plugin-run-script', { cmd: 'eleventy', watch: '$1 --watch' }],
   ],
-  packageOptions: {
-    NODE_ENV: true,
-    source: 'remote',
+  routes: [
+    /* Enable an SPA Fallback in development: */
+    // {"match": "routes", "src": ".*", "dest": "/index.html"},
+  ],
+  optimize: {
+    /* Example: Bundle your final build: */
+    // "bundle": true,
   },
-  buildOptions: {
-    clean: true,
-    out: 'dist',
+  packageOptions: {
+    /* ... */
   },
   devOptions: {
-    open: 'none',
+    // Eleventy updates multiple files at once, so add a 300ms delay before we trigger a browser update
+    hmrDelay: 300,
   },
-  optimize: {
-    bundle: true,
-    minify: true,
-    target: 'es2020',
+  buildOptions: {
+    /* ... */
   },
 };
