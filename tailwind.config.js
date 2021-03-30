@@ -5,11 +5,7 @@ module.exports = {
   purge: {
     mode: 'all',
     preserveHtmlElements: false,
-    content: [
-      './includes/layouts/**/*.html',
-      './pages/**/*.html',
-      './pages/**/*.md',
-    ],
+    content: ['./includes/layouts/**/*.html', './pages/**/*.{html,md}'],
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
