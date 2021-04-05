@@ -1,10 +1,10 @@
 ---
-layout: 'layouts/main.html'
+layout: 'layouts/home.html'
 title: 'Home'
 meta:
   desc:
-    '11st-Starter-Kit is a minimal starting point for building static websites
-    with 11ty, powered by Snowpack with Tailwind CSS and Alpine.js.'
+    '11tyat is a opinionated minimal starting point for building static websites
+    with 11ty, powered by Snowpack with Tailwind CSS and Alpine.js. 11tyat is very inpired by 11st that created by stefanfrede.'
 intro:
   title: 'Welcome to Your Eleventy App'
   desc:
@@ -13,21 +13,3 @@ intro:
     font-medium underline">Eleventy</a> and <a href="https://www.snowpack.dev/"
     class="text-gray-900 font-medium underline">Snowpack</a> documentation.'
 ---
-
-## Community
-
-[Eleventy](https://www.11ty.dev/news/discord/) -
-[Snowpack](https://discord.com/invite/snowpack) - [Tailwind
-CSS](https://tailwindcss.com/discord) - [Alpine.js](https://discord.gg/CGmj5nq)
-
-## Awesome
-
-[Eleventy](https://github.com/scottishstoater/awesome-eleventy) -
-[Snowpack](https://github.com/rajasegar/awesome-snowpack) - [Tailwind
-CSS](https://github.com/aniftyco/awesome-tailwindcss) -
-[Alpine.js](https://github.com/alpine-collective/awesome)
-
-## Ecosystem
-
-[Eleventy](https://www.11ty.dev/) - [Snowpack](https://www.snowpack.dev/) -
-[Tailwind CSS](https://tailwindcss.com/) - [Alpine.js](https://github.com/alpinejs/alpine/)

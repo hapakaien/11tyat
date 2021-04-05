@@ -4,8 +4,12 @@
     {% include 'layouts/partials/head.html' %}
   </head>
   <body class="bg-white text-gray-700 text-base font-sans antialiased leading-normal tracking-normal">
+    {% include 'layouts/partials/header.html' %}
+
     {% block content %}{% endblock %}
 
     <script type="module" src="/scripts/index.js"></script>
+
+    {% include 'layouts/partials/footer.html' %}
   </body>
 </html>
