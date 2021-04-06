@@ -2,6 +2,7 @@ dependencies:
   alpinejs: 2.8.2
 devDependencies:
   '@11ty/eleventy': 0.11.1
+  '@jadex/snowpack-plugin-tailwindcss-jit': 0.1.1_3aa232ffac83f9e2a83ee897ae850497
   '@snowpack/plugin-postcss': 1.2.1_postcss@8.2.8
   '@snowpack/plugin-run-script': 2.3.0
   '@tailwindcss/jit': 0.1.18_postcss@8.2.8+tailwindcss@2.0.4
@@ -116,6 +117,21 @@ packages:
     dev: true
     resolution:
       integrity: sha512-kwOXw8fZ0Lt1QmeOOrd+o4Ibvp4UTEBFQbzvWldjlKv5n+G9sXfIPn1hh63IQIL8K8vbvv1oYMJiIUbuy9bGaA==
+  /@jadex/snowpack-plugin-tailwindcss-jit/0.1.1_3aa232ffac83f9e2a83ee897ae850497:
+    dependencies:
+      '@tailwindcss/jit': 0.1.18_postcss@8.2.8+tailwindcss@2.0.4
+      fs: 0.0.1-security
+      micromatch: 4.0.2
+      path: 0.12.7
+      snowpack: 3.1.2
+      tailwindcss: 2.0.4_caf414ac65a978d0d57907a0ec9fb41e
+    dev: true
+    peerDependencies:
+      '@tailwindcss/jit': ^0.1.16
+      snowpack: ^3.1.2
+      tailwindcss: ^2.0.4
+    resolution:
+      integrity: sha512-26iCjhWc6nxdCpLtHDXWcrUuGqjiNxRyLi4QhBfn9ILRo02W+QVA3u71nj/JRWVgQ3n3BM2+aS3mDKgVLDw1DQ==
   /@nodelib/fs.scandir/2.1.4:
     dependencies:
       '@nodelib/fs.stat': 2.0.4
@@ -2138,6 +2154,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
+  /fs/0.0.1-security:
+    dev: true
+    resolution:
+      integrity: sha1-invTcYa23d84E/I4WLV+yq9eQdQ=
   /fsevents/2.3.2:
     dev: true
     engines:
@@ -3739,6 +3759,13 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
+  /path/0.12.7:
+    dependencies:
+      process: 0.11.10
+      util: 0.10.4
+    dev: true
+    resolution:
+      integrity: sha1-1NwqUGxM4hl+tIHr/NWzbAFAsQ8=
   /picomatch/2.2.2:
     dev: true
     engines:
@@ -4269,6 +4296,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-rbx5YLe7/iiaVX3F9zdhmiINBqU=
+  /process/0.11.10:
+    dev: true
+    engines:
+      node: '>= 0.6.0'
+    resolution:
+      integrity: sha1-czIwDoQBYb2j5podHZGn1LwW8YI=
   /progress/2.0.3:
     dev: true
     engines:
@@ -5446,6 +5479,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-g9JpC/3He3bm38zsLupWryXHoEcS22YHthuPQSJdMy6KNrzIRzWqcsHzD/WUnqe45whVou4VIsPew37DoXWNrA==
+  /util/0.10.4:
+    dependencies:
+      inherits: 2.0.3
+    dev: true
+    resolution:
+      integrity: sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==
   /utils-merge/1.0.1:
     dev: true
     engines:
@@ -5690,6 +5729,7 @@ packages:
       integrity: sha1-AI4G2AlDIMNy28L47XagymyKxBk=
 specifiers:
   '@11ty/eleventy': ^0.11.0
+  '@jadex/snowpack-plugin-tailwindcss-jit': ^0.1.1
   '@snowpack/plugin-postcss': ^1.2.1
   '@snowpack/plugin-run-script': ^2.3.0
   '@tailwindcss/jit': ^0.1.18
