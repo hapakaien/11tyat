@@ -2,6 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const tailwindcssTypography = require('@tailwindcss/typography');
 
 module.exports = {
+  mode: 'jit',
   purge: {
     mode: 'all',
     preserveHtmlElements: false,
