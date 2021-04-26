@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -6,7 +6,6 @@ on:
 
 jobs:
   build:
-
     name: Build ${{ matrix.os }} - N${{ matrix.node-version }}
     runs-on: ${{ matrix.os }}
     strategy:
@@ -41,4 +40,46 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+  deploy:
+    name: Deploy
+    needs: build
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: 15.x
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-pnpm-modules
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+
+      - name: Setup pnpm & install dependencies
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.1.0
+          run_install: true
+
+      - name: Build
+        run: pnpm build
+
+      - name: Push
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: deploy
+          FOLDER: build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
