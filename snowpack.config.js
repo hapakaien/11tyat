@@ -5,7 +5,12 @@ module.exports = {
     assets: { url: '/' },
   },
   plugins: [
-    '@snowpack/plugin-postcss',
+    [
+      '@snowpack/plugin-postcss',
+      {
+        input: ['.css'],
+      },
+    ],
     [
       '@snowpack/plugin-run-script',
       {
