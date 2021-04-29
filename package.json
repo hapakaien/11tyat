@@ -1,43 +1,75 @@
 {
-  "scripts": {
-    "clean": "rimraf dist",
-    "11ty": "eleventy",
-    "serve": "serve --no-clipboard --listen 8080 build",
-    "dev": "cross-env NODE_ENV=development run-s clean dev:*",
-    "dev:snowpack": "snowpack dev",
-    "build": "cross-env NODE_ENV=production run-s clean 11ty build:*",
-    "build:snowpack": "snowpack build",
-    "lint": "run-s lint:*",
-    "lint:eslint": "eslint --ext .js,.html includes/layouts/",
-    "format": "run-s format:*",
-    "format:eslint": "eslint --ext .js,.html includes/layouts/ --fix",
-    "validate": "run-s build lint"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "@snowpack/plugin-postcss": "^1.2.2",
-    "@snowpack/plugin-run-script": "^2.3.0",
-    "@tailwindcss/typography": "^0.4.0",
-    "autoprefixer": "^10.2.5",
-    "cross-env": "^7.0.3",
-    "cssnano": "^4.1.11",
-    "eslint": "^7.25.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.4.0",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.2.13",
-    "postcss-cli": "^8.3.1",
-    "postcss-import": "^14.0.1",
-    "postcss-nested": "^5.0.5",
-    "prettier": "^2.2.1",
-    "rimraf": "^3.0.2",
-    "serve": "^11.3.2",
-    "snowpack": "^3.3.5",
-    "tailwindcss": "^2.1.2"
-  },
-  "dependencies": {
-    "alpinejs": "^2.8.2"
-  }
+    "name": "@hapakaien/11ty-boilerplate",
+    "version": "1.0.0",
+    "description": "Eleventy boilerplate, powered by Snowpack.",
+    "keywords": [
+        "11ty",
+        "eleventy",
+        "snowpack",
+        "tailwindcss"
+    ],
+    "homepage": "https://github.com/hapakaien/11ty-boilerplate#readme",
+    "bugs": {
+        "url": "https://github.com/hapakaien/11ty-boilerplate/issues"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Ahmad Husen",
+        "email": "hello@husen.id",
+        "url": "https://husen.id"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hapakaien/11ty-boilerplate.git"
+    },
+    "engines": {
+        "node": ">=14.x.x"
+    },
+    "private": true,
+    "browserslist": [
+        "defaults",
+        "maintained node versions",
+        "> 5%"
+    ],
+    "scripts": {
+        "clean": "rimraf dist",
+        "11ty": "eleventy",
+        "serve": "serve --no-clipboard --listen 8080 build",
+        "dev": "cross-env NODE_ENV=development run-s clean dev:*",
+        "dev:snowpack": "snowpack dev",
+        "build": "cross-env NODE_ENV=production run-s clean 11ty build:*",
+        "build:snowpack": "snowpack build",
+        "lint": "run-s lint:*",
+        "lint:eslint": "eslint --ext .js,.html includes/layouts/",
+        "format": "run-s format:*",
+        "format:eslint": "eslint --ext .js,.html includes/layouts/ --fix",
+        "validate": "run-s build lint"
+    },
+    "devDependencies": {
+        "@11ty/eleventy": "^0.12.1",
+        "@snowpack/plugin-postcss": "^1.2.2",
+        "@snowpack/plugin-run-script": "^2.3.0",
+        "@tailwindcss/typography": "^0.4.0",
+        "autoprefixer": "^10.2.5",
+        "cross-env": "^7.0.3",
+        "cssnano": "^4.1.11",
+        "eslint": "^7.25.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-prettier": "^3.4.0",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.2.13",
+        "postcss-cli": "^8.3.1",
+        "postcss-import": "^14.0.1",
+        "postcss-nested": "^5.0.5",
+        "prettier": "^2.2.1",
+        "rimraf": "^3.0.2",
+        "serve": "^11.3.2",
+        "snowpack": "^3.3.5",
+        "tailwindcss": "^2.1.2"
+    },
+    "dependencies": {
+        "alpinejs": "^2.8.2"
+    }
 }
