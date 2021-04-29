@@ -13,3 +13,5 @@ intro:
     font-medium underline">Eleventy</a> and <a href="https://www.snowpack.dev/"
     class="text-gray-900 font-medium underline">Snowpack</a> documentation.'
 ---
+
+{% image "./assets/img/eugenia-clara-xrCpCQPaDSA-unsplash.jpg", "Merapi mountain" %}
