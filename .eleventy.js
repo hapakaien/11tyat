@@ -1,4 +1,5 @@
 const Image = require('@11ty/eleventy-img');
+const svgContents = require('eleventy-plugin-svg-contents');
 
 async function imageShortcode(src, alt,
   sizes='(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1280px) 75vw, (max-width: 1500px) 50vw, 1500px') {
@@ -31,6 +32,9 @@ module.exports = function(config) {
   config.addLiquidShortcode('image', imageShortcode, {
     whitespaceMode: 'inline'
   });
+
+  // Plugin
+  config.addPlugin(svgContents);
 
   // Base config
   return {
