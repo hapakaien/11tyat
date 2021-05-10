@@ -10,8 +10,8 @@ intro:
   desc:
     'For a guide and recipes on how to configure / customize this project, check
     out the <a href="https://www.11ty.dev/docs/" class="text-gray-900
-    font-medium underline">Eleventy</a> and <a href="https://www.snowpack.dev/"
-    class="text-gray-900 font-medium underline">Snowpack</a> documentation.'
+    font-medium underline" target="_blank">Eleventy</a> and <a href="https://www.snowpack.dev/"
+    class="text-gray-900 font-medium underline" target="_blank">Snowpack</a> documentation.'
 ---
 
 {% image "./assets/img/eugenia-clara-xrCpCQPaDSA-unsplash.jpg", "Merapi mountain" %}

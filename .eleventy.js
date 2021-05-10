@@ -10,6 +10,7 @@ async function imageShortcode(src, alt,
   });
 
   let imageAttributes = {
+    class: "w-full max-w-prose h-auto object-cover",
     alt,
     sizes,
     loading: "lazy",
