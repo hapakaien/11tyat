@@ -23,7 +23,7 @@
         "url": "https://github.com/hapakaien/11ty-boilerplate.git"
     },
     "engines": {
-        "node": ">=14.x.x"
+        "node": ">=12.x.x"
     },
     "private": true,
     "browserslist": [
