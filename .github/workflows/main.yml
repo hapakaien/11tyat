@@ -39,14 +39,6 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
 
       - name: Setup pnpm & install dependencies
-        if: ${{ github.event_name == 'push' }}
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: ${{ matrix.pnpm }}
-          run_install: true
-
-      - name: Setup pnpm & install dependencies
-        if: ${{ github.event_name == 'pull_request' }}
         uses: pnpm/action-setup@v2.0.1
         with:
           version: ${{ matrix.pnpm }}
@@ -86,7 +78,9 @@ jobs:
         uses: pnpm/action-setup@v2.0.1
         with:
           version: ${{ matrix.pnpm }}
-          run_install: true
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile=false]
 
       - name: Build with pnpm
         run: pnpm build
