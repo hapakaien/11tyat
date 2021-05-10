@@ -2,9 +2,9 @@ const Image = require('@11ty/eleventy-img');
 const svgContents = require('eleventy-plugin-svg-contents');
 
 async function imageShortcode(src, alt,
-  sizes='(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1280px) 75vw, (max-width: 1500px) 50vw, 1500px') {
+  sizes='(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1280px) 75vw, (max-width: 1500px) 50vw, 900px') {
   let metadata = await Image(src, {
-    widths: [300, 600, 900, 1500],
+    widths: [300, 600, 900],
     formats:["avif", "webp", "jpeg"],
     outputDir: './dist/img'
   });
