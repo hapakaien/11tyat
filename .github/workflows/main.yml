@@ -16,6 +16,8 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
         node-version: [12.x, 14.x, 15.x]
+        include:
+          - pnpm: 6.2.5
 
     steps:
       - name: Checkout
@@ -37,10 +39,20 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
 
       - name: Setup pnpm & install dependencies
+        if: ${{ github.event_name == 'push' }}
         uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.1.0
+          version: ${{ matrix.pnpm }}
           run_install: true
+
+      - name: Setup pnpm & install dependencies
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ${{ matrix.pnpm }}
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile=false]
 
       - name: Build with pnpm
         run: pnpm build
@@ -73,7 +85,7 @@ jobs:
       - name: Setup pnpm & install dependencies
         uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.1.0
+          version: ${{ matrix.pnpm }}
           run_install: true
 
       - name: Build with pnpm
