@@ -2,7 +2,8 @@
 module.exports = {
   mount: {
     dist: { url: '/', static: true },
-    assets: { url: '/' },
+    'assets/scripts': { url: '/scripts' },
+    'assets/styles': { url: '/styles' },
   },
   plugins: [
     [
