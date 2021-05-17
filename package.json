@@ -47,7 +47,7 @@
     },
     "devDependencies": {
         "@11ty/eleventy": "^0.12.1",
-        "@11ty/eleventy-img": "^0.8.3",
+        "@11ty/eleventy-img": "^0.9.0",
         "@snowpack/plugin-postcss": "^1.2.2",
         "@snowpack/plugin-run-script": "^2.3.0",
         "@tailwindcss/typography": "^0.4.0",
