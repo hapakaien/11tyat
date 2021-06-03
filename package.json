@@ -15,7 +15,7 @@
     "license": "MIT",
     "author": {
         "name": "Ahmad Husen",
-        "email": "hello@husen.id",
+        "email": "hi@husen.id",
         "url": "https://husen.id"
     },
     "repository": {
@@ -25,12 +25,6 @@
     "engines": {
         "node": ">=12.x.x"
     },
-    "private": true,
-    "browserslist": [
-        "defaults",
-        "maintained node versions",
-        "> 5%"
-    ],
     "scripts": {
         "clean": "rimraf dist",
         "11ty": "eleventy",
@@ -73,5 +67,11 @@
     },
     "dependencies": {
         "alpinejs": "^2.8.2"
-    }
+    },
+    "private": true,
+    "browserslist": [
+        "defaults",
+        "maintained node versions",
+        "> 5%"
+    ]
 }
