@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI
 
 on:
   push:
@@ -8,17 +8,13 @@ on:
     branches:
       - main
 
-env:
-  PNPM: 6.2.5
-
 jobs:
   build:
-    name: Build ${{ matrix.os }} - N${{ matrix.node-version }}
-    runs-on: ${{ matrix.os }}
+    name: Build (Node v${{ matrix.node-version }})
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
-        node-version: [12.x, 14.x, 15.x]
+        node-version: [12.x, 14.x, 16.x]
 
     steps:
       - name: Checkout
@@ -42,10 +38,10 @@ jobs:
       - name: Setup pnpm & install dependencies
         uses: pnpm/action-setup@v2.0.1
         with:
-          version: ${{ env.PNPM }}
+          version: 6.x.x
           run_install: |
-            - recursive: true
-              args: [--frozen-lockfile=false]
+            - recursive: false
+              args: [--frozen-lockfile]
 
       - name: Build with pnpm
         run: pnpm build
@@ -53,7 +49,7 @@ jobs:
   deploy:
     name: Deploy
     needs: build
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -63,7 +59,7 @@ jobs:
       - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2.1.5
         with:
-          node-version: 15.x
+          node-version: 16.x
 
       - name: Cache pnpm modules
         uses: actions/cache@v2.1.5
@@ -78,10 +74,10 @@ jobs:
       - name: Setup pnpm & install dependencies
         uses: pnpm/action-setup@v2.0.1
         with:
-          version: ${{ env.PNPM }}
+          version: 6.x.x
           run_install: |
-            - recursive: true
-              args: [--frozen-lockfile=false]
+            - recursive: false
+              args: [--frozen-lockfile]
 
       - name: Build with pnpm
         run: pnpm build
